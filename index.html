@@ -9,39 +9,48 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <main class="quiz-container">
-    <header>
-      <p class="tag">LEARN • PLAY • GROW</p>
-      <h1>Online Quiz</h1>
-      <p class="subtitle">Test your knowledge and challenge yourself!</p>
-    </header>
+  <main class="container">
+    <h1>🧠 Online Quiz App</h1>
+    <p class="subtitle">Test your knowledge and beat the clock!</p>
 
     <section id="quiz-screen">
+      <label for="player-name">Your name</label>
+      <input
+        type="text"
+        id="player-name"
+        placeholder="Enter your name"
+        maxlength="20"
+      >
+
       <div class="quiz-info">
-        <span id="question-number">Question 1 of 5</span>
-        <span id="score">Score: 0</span>
+        <span id="question-number">Question 1 of 20</span>
+        <span id="timer">Time Left: 2:00</span>
       </div>
 
-      <div class="progress-track">
+      <div class="progress-container">
         <div id="progress-bar"></div>
       </div>
 
-      <h2 id="question">Question will appear here</h2>
-      <div id="answers" class="answers"></div>
-      <p id="feedback" aria-live="polite"></p>
+      <h2 id="question">Loading question...</h2>
+      <div id="answers"></div>
 
-      <button id="next-btn" disabled>Next Question →</button>
+      <p id="score">Score: 0</p>
     </section>
 
-    <section id="result-screen" hidden>
-      <div class="result-icon">🏆</div>
-      <h2>Quiz Completed!</h2>
+    <section id="result-screen" style="display: none;">
+      <h2>🎉 Quiz Completed!</h2>
+      <p>Your score:</p>
+      <h2 id="final-score">0 / 20</h2>
       <p id="result-message"></p>
-      <p id="final-score"></p>
-      <button id="restart-btn">Try Again ↻</button>
+      <button id="restart-btn" type="button">Play Again 🔄</button>
     </section>
 
-    <footer>Made with ❤️ by a CSE student</footer>
+    <section class="leaderboard">
+      <h2>🏆 Top 5 Leaderboard</h2>
+      <ol id="leaderboard-list">
+        <li>Complete a quiz to appear here!</li>
+      </ol>
+    </section>
   </main>
 </body>
 </html>
